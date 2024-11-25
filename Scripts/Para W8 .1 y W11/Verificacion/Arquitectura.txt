@@ -1,0 +1,10 @@
+SystemMonitoring/
+├── config/
+│   └── config.json                  
+├── services/
+│   ├── cpu_service.py               
+│   ├── memory_service.py           
+│   ├── disk_service.py             
+│   ├── system_info_service.py       
+│   ├── alert_service.py             
+└── main.py                          

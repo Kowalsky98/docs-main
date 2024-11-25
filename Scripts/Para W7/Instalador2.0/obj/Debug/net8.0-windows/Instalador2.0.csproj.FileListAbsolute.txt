@@ -1,0 +1,14 @@
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\bin\Debug\net8.0-windows\Instalador2.0.exe
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\bin\Debug\net8.0-windows\Instalador2.0.deps.json
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\bin\Debug\net8.0-windows\Instalador2.0.runtimeconfig.json
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\bin\Debug\net8.0-windows\Instalador2.0.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\bin\Debug\net8.0-windows\Instalador2.0.pdb
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.AssemblyInfoInputs.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.AssemblyInfo.cs
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.csproj.CoreCompileInputs.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\refint\Instalador2.0.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.pdb
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\Instalador2.0.genruntimeconfig.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Instalador2.0\obj\Debug\net8.0-windows\ref\Instalador2.0.dll

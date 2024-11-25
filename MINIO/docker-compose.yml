@@ -1,0 +1,30 @@
+networks:
+  caddy:
+    external: true
+
+volumes:
+  minio_data:
+
+services:
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    ports:
+      - "9002:9000"
+      - "9001"
+    labels:
+      caddy_0: ${FRONTEND_URL}
+      caddy_0.reverse_proxy: "{{upstreams 9001}}"
+      caddy_1: ${STORAGE_URL}
+      caddy_1.reverse_proxy: "{{upstreams 9000}}"
+
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - caddy
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BROWSER_REDIRECT_URL: ${FRONTEND_URL}
+      MINIO_SERVER_URL: ${STORAGE_URL}

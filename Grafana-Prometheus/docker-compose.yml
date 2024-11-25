@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: unless-stopped
+    volumes:
+      - prometheus_data:/prometheus
+      - /data/compose/3/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    networks:
+      - caddy
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    environment:
+      - GF_SERVER_ROOT_URL=http://192.168.3.126
+    ports:
+      - 3001:3000
+    networks:
+      - caddy
+    labels:
+      - caddy=${FRONTEND_URL}
+      - caddy.reverse_proxy="{{upstreams 3000}}"
+
+volumes:
+  prometheus_data:
+
+networks:
+  caddy:
+    external: true

@@ -1,0 +1,28 @@
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\bin\Debug\net8.0\Post.exe
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\bin\Debug\net8.0\Post.deps.json
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\bin\Debug\net8.0\Post.runtimeconfig.json
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\bin\Debug\net8.0\Post.dll
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\bin\Debug\net8.0\Post.pdb
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.AssemblyInfoInputs.cache
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.AssemblyInfo.cs
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.csproj.CoreCompileInputs.cache
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.dll
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\refint\Post.dll
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.pdb
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\Post.genruntimeconfig.cache
+C:\Users\Luis\Desktop\Escritorio\ProyectosW7\VerificadorDeInstalacion\obj\Debug\net8.0\ref\Post.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\bin\Debug\net8.0\Post.exe
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\bin\Debug\net8.0\Post.deps.json
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\bin\Debug\net8.0\Post.runtimeconfig.json
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\bin\Debug\net8.0\Post.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\bin\Debug\net8.0\Post.pdb
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.AssemblyInfoInputs.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.AssemblyInfo.cs
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.csproj.CoreCompileInputs.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\refint\Post.dll
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.pdb
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\Post.genruntimeconfig.cache
+C:\Users\Luis\Desktop\Archivos Windowns 7\Post\obj\Debug\net8.0\ref\Post.dll

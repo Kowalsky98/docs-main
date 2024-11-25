@@ -1,0 +1,92 @@
+networks:
+  caddy:
+    external: true
+  evolution-net:
+    name: evolution-net
+    driver: bridge
+
+volumes:
+  evolution_data:
+  rabbitmq_data:
+  evolution_redis:
+  evolution_instances:
+
+
+services:
+  postgres_evolution:
+    container_name: postgres_evolution
+    image: postgres:15
+    command: ["postgres", "-c", "max_connections=1000"]
+    restart: always
+    networks:
+      - evolution-net
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - evolution_data:/var/lib/postgresql/data
+      
+  redis_evolution:
+    image: redis:latest
+    networks:
+        - evolution-net
+    container_name: redis
+    command: >
+        redis-server --port 6379 --appendonly yes
+    volumes:
+      - evolution_redis:/data
+
+  rabbitmq_evolution:
+    container_name: rabbitmq_evolution
+    image: rabbitmq:management
+    networks:
+      - evolution-net
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+      - RABBITMQ_DEFAULT_VHOST=default
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq/
+
+  evolution-api:
+    container_name: evolution_api
+    labels:
+      - caddy=${FRONTEND_URL}
+      - caddy.reverse_proxy="{{upstreams 8080}}"
+    image: atendai/evolution-api:v2.1.0
+    restart: always
+    networks:
+      - evolution-net
+      - caddy
+    depends_on:
+      - postgres_evolution
+      - redis_evolution
+      - rabbitmq_evolution
+    environment:
+      - SERVER_URL=${FRONTEND_URL}
+      - DATABASE_ENABLED=true
+      - DATABASE_PROVIDER=postgresql
+      - DATABASE_CONNECTION_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_evolution:5432/${POSTGRES_DB}?schema=public
+      - DATABASE_CONNECTION_CLIENT_NAME=evolution_exchange
+      - DATABASE_SAVE_DATA_INSTANCE=true
+      - DATABASE_SAVE_DATA_NEW_MESSAGE=true
+      - DATABASE_SAVE_MESSAGE_UPDATE=true
+      - DATABASE_SAVE_DATA_CONTACTS=true
+      - DATABASE_SAVE_DATA_CHATS=true
+      - DATABASE_SAVE_DATA_LABELS=true
+      - DATABASE_SAVE_DATA_HISTORIC=true
+      - CACHE_REDIS_ENABLED=true
+      - CACHE_REDIS_URI=redis://redis_evolution:6379/6
+      - CACHE_REDIS_PREFIX_KEY=evolution
+      - CACHE_REDIS_SAVE_INSTANCES=false
+      - CACHE_LOCAL_ENABLED=false
+      - RABBITMQ_ENABLED=true
+      - RABBITMQ_URI=amqp://${RABBITMQ_DEFAULT_USER}:${RABBITMQ_DEFAULT_PASS}@rabbitmq_evolution:5672/default
+      - RABBITMQ_EXCHANGE_NAME=evolution_exchange
+      - RABBITMQ_GLOBAL_ENABLED=true
+      - AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY}
+      - CHATWOOT_ENABLED=true
+    volumes:
+      - evolution_instances:/evolution/instances

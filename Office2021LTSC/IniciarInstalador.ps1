@@ -1,0 +1,1 @@
+./setup /configure ./Configuracion.xml

@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  hbbs:
+    container_name: hbbs
+    image: rustdesk/rustdesk-server-pro:latest
+    command: hbbs -r remoto.gana-loterias.online:21117
+    restart: unless-stopped
+    labels:
+      - caddy=${FRONTEND_URL}
+      - caddy.reverse_proxy="{{upstreams 21114}}"
+    ports:
+      - 21114:21114
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    volumes:
+      - rustdeskhbbs:/root
+    networks:
+      - caddy
+
+  hbbr:
+    container_name: hbbr
+    image: rustdesk/rustdesk-server-pro:latest
+    command: hbbr
+    restart: unless-stopped
+    ports:
+      - 21117:21117
+      - 21119:21119
+    volumes:
+      - rustdeskhbbr:/root
+    networks:
+      - caddy
+volumes:
+  rustdeskhbbr:
+  rustdeskhbbs:
+  
+
+networks:
+  caddy:
+    external: true
+
